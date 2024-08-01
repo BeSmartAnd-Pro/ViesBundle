@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sandwich\ViesBundle\Tests\Validator\Constraint;
@@ -9,10 +10,7 @@ use Sandwich\ViesBundle\Validator\Constraint\VatNumberValidator;
 
 final class VatNumberTest extends TestCase
 {
-    /**
-     * @var VatNumber
-     */
-    private $constraint;
+    private VatNumber $constraint;
 
     protected function setUp(): void
     {

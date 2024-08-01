@@ -1,28 +1,19 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sandwich\ViesBundle\Validator\Constraint;
 
+use Attribute;
 use Symfony\Component\Validator\Constraint;
 
-/**
- * @Annotation
- */
+#[Attribute(Attribute::TARGET_PROPERTY | Attribute::IS_REPEATABLE)]
 final class VatNumber extends Constraint
 {
-    /**
-     * @var string
-     */
-    public $format = 'NL';
+    public string $format = 'NL';
 
-    /**
-     * @var string
-     */
-    public $message = 'This is not a valid %format% vat number.';
+    public string $message = 'This is not a valid %format% vat number.';
 
-    /**
-     * @return string
-     */
     public function getFormat(): string
     {
         return $this->format;

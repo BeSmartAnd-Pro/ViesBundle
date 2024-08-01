@@ -5,6 +5,4 @@
 
     <arg value="sp"/>
     <arg name="colors"/>
-
-    <rule ref="vendor/myonlinestore/coding-standard/MyOnlineStore/ruleset.xml"/>
 </ruleset>

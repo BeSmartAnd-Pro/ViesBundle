@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sandwich\ViesBundle\Tests\Validator\Constraint;
@@ -42,10 +43,7 @@ class VatNumberValidatorTest extends TestCase
      */
     private $response;
 
-    /**
-     * @var VatNumberValidator
-     */
-    private $validator;
+    private VatNumberValidator $validator;
 
     protected function setUp(): void
     {

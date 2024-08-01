@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sandwich\ViesBundle\Validator\Constraint;
@@ -11,14 +12,8 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 final class VatNumberValidator extends ConstraintValidator
 {
-    /**
-     * @var Vies
-     */
-    private $viesApi;
+    private Vies $viesApi;
 
-    /**
-     * @param Vies $viesApi
-     */
     public function __construct(Vies $viesApi)
     {
         $this->viesApi = $viesApi;
@@ -47,10 +42,10 @@ final class VatNumberValidator extends ConstraintValidator
 
         try {
             $isValid = $this->viesApi->validateVat($format, str_replace($format, '', $value))->isValid();
-        } catch (ViesServiceException $exception) {
+        } catch (ViesServiceException) {
             //There is probably a temporary problem with back-end VIES service
             return;
-        } catch (ViesException $exception) {
+        } catch (ViesException) {
         }
 
         if ($isValid) {
